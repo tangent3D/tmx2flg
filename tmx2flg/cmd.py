@@ -24,9 +24,9 @@ def main(argv=None):
         for tile in tileset.iter('tile'):
             # get tile ids in tileset
             id = tile.get('id')
-            # get flag value (fixme: assumes only one custom property per tile)
+            # get tile custom properties
             for property in tile.iter('property'):
-                # make sure we only care about custom properties called 'Flag'
+                # only care about custom properties called 'Flag'
                 if (property.get('name') == "Flag"):
                     flag = property.get('value')
                     # store flag value at tile position in array
