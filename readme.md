@@ -1,3 +1,7 @@
+## Installation
+
+`pip install .`
+
 ## Usage
 
 `tmx2flg --file filename.tmx`
