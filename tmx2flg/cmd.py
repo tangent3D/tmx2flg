@@ -26,10 +26,11 @@ def main(argv=None):
             id = tile.get('id')
             # get flag value (fixme: assumes only one custom property per tile)
             for property in tile.iter('property'):
-                flag = property.get('value')
-                # store flag value at tile position in array
-                ba[int(id)] = int(flag)
-
+                # make sure we only care about custom properties called 'Flag'
+                if (property.get('name') == "Flag"):
+                    flag = property.get('value')
+                    # store flag value at tile position in array
+                    ba[int(id)] = int(flag)
         # write out binary file
         with open(name + '.flg', 'wb') as output:
             output.write(ba)
